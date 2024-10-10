@@ -7,18 +7,18 @@ function Home() {
     const [todos, setTodos]=useState([]);
 
     useEffect(()=>{
-        axios.get('http://localhost:7001/get')
+        axios.get('https://todo-list-backend-699b.onrender.com/get')
         .then(result =>setTodos(result.data))
         .catch(err =>console.log(err))
     },[])
 
     const handleEdit=(id)=>{
-            axios.put('http://localhost:7001/update/'+id)
+            axios.put('https://todo-list-backend-699b.onrender.com/update/'+id)
             .then(()=>window.location.reload())
             .catch(err =>console.log(err))
     }
     const handleDelete=(id)=>{
-        axios.delete('http://localhost:7001/delete/'+id)
+        axios.delete('https://todo-list-backend-699b.onrender.com/delete/'+id)
             .then(() =>window.location.reload())
             .catch(err =>console.log(err))
     }
