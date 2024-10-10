@@ -29,7 +29,7 @@ function Create() {
       return;
     }
 
-    axios.post("https://todo-list-backend-699b.onrender.com/add", { task: task })
+    axios.post("http://localhost:7001/add", { task: task })
       .then(() => {
         setTask(''); 
         window.location.reload();
